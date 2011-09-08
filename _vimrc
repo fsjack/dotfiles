@@ -50,6 +50,12 @@
 " MakeGreen
 "    Generic test runner that works with nose
 "
+" WinManager
+"
+" TagList
+"
+" Nerd-Commenter
+"
 " ==========================================================
 " Shortcuts
 " ==========================================================
@@ -62,6 +68,65 @@ command! W :w
 " sudo write this
 cmap W! w !sudo tee % >/dev/null
 
+"personal setting
+set clipboard=unnamed
+set guifont=Monaco:h12
+map c <c-w>s
+map C <c-w>v
+map <silent> <leader>ss :source ~/.vimrc<cr>
+map <silent> <leader>ee :e ~/.vimrc<cr>
+set noswapfile
+set nobackup
+set nowb
+map q <c-w>q
+map r <c-r>
+map <C-a> ggVG
+imap <C-a> <Esc>ggVGi
+map <c-m> ,c<space>  
+
+"python syntax highlighing
+let python_highlight_all=1
+"set filetype=python
+"au BufNewFile,BufRead *.py,*.pyw setf python
+
+"get rid of scrollbar on macvim
+set guioptions-=r
+set guioptions-=L
+set guioptions-=T
+
+"winmanager
+"""""""""""""""""""""""""""""""
+"" winManager setting
+"""""""""""""""""""""""""""""""
+let g:winManagerWindowLayout = 'NERDTree|TagList'
+"设置winmanager的宽度，默认为25
+let g:winManagerWidth = 30
+"定义打开关闭winmanager按键
+"nmap <silent> <F8> :WMToggle<cr>
+let g:AutoOpenWinManager = 1
+
+let NERDTreeWinPos = "right"
+" Taglist variables
+" Display function name in status bar:
+let g:ctags_statusline=1
+" Automatically start script
+let generate_tags=1
+" Displays taglist results in a vertical window:
+let Tlist_Use_Horiz_Window=0
+" Shorter commands to toggle Taglist display
+map TT :TlistToggle<cr>
+"map <F4> :TlistToggle<cr>
+" Various Taglist diplay config:
+let Tlist_Show_One_File=1
+let Tlist_Use_Right_Window = 1
+let Tlist_Compact_Format = 1
+let Tlist_Exit_OnlyWindow = 1
+"let Tlist_GainFocus_On_ToggleOpen = 1
+let Tlist_File_Fold_Auto_Close = 1
+"let Tlist_Auto_Open=1 
+let Tlist_Show_Menu=1
+
+let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
 
 " Toggle the tasklist
 map <leader>td <Plug>TaskList
@@ -212,8 +277,8 @@ set laststatus=2            " Always show statusline, even if only 1 window.
 set statusline=[%l,%v\ %P%M]\ %f\ %r%h%w\ (%{&ff})\ %{fugitive#statusline()}
 
 " displays tabs with :set list & displays when a line runs off-screen
-set listchars=tab:>-,eol:$,trail:-,precedes:<,extends:>
-set list
+"set listchars=tab:>-,eol:$,trail:-,precedes:<,extends:>
+"set list
 
 """ Searching and Patterns
 set ignorecase              " Default to using case insensitive searches,

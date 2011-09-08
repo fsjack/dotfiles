@@ -1,6 +1,6 @@
 [user]
-    name = John Anderson
-    email = sontek@gmail.com
+	name = Jackie CHEUNG
+	email = fsjack@gmail.com
 
 [color]
     diff = auto
@@ -11,3 +11,6 @@
     default = matching
 [core]
     editor = vim
+[github]
+	user = fsjack
+	token = 0d50004878bb27f8b392193624163a2b
